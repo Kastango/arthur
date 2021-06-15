@@ -42,8 +42,8 @@ export default function Home() {
           <div className="flex justify-between p-8">
             <ul className="flex space-x-10 font-medium" >
               <a href="https://www.behance.net/ArthurSosnowski">projects</a>   
-              <a href="https://www.w3schools.com">about</a>
-              <a href="https://www.w3schools.com">resume</a>
+              <a href="">about</a>
+              <a href="https://drive.google.com/file/d/17LAq6Pgof09QMV8Yjhn5s645kBic29KS/view?usp=sharing">resume</a>
             </ul>
             <ul className="flex space-x-5" >
               <a href="https://www.instagram.com/arthur.ber7/">
@@ -56,7 +56,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center self-center mt-28">
             <div className="h-grady w-gradx rounded-t-full overflow-hidden flex relative" ref={vantaRef}></div>
-            <div className="flex space-x-6 z-10 absolute place-self-center my-auto">
+            <div className="flex md:flex-row md:space-x-6 z-10 absolute place-self-center my-auto flex-col">
               <img className="h-10" src='/arthur.svg' alt="arthur"/>
               <img className="h-10" src='/sosnowski.svg' alt="sosnowski"/>
             </div>
