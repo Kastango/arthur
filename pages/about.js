@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from 'next/link'
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import FOG from "vanta/dist/vanta.fog.min";
 import * as THREE from "three";
@@ -56,11 +56,8 @@ export default function Home() {
             </ul>
           </div>
           <div className="flex justify-center self-center mt-28">
-            <div className="h-grady w-gradx rounded-t-full overflow-hidden flex relative" ref={vantaRef}></div>
-            <div className="flex md:flex-row md:space-x-6 z-10 absolute place-self-center my-auto flex-col">
-              <img className="h-10" src='/arthur.svg' draggable="false" alt="arthur"/>
-              <img className="h-10" src='/sosnowski.svg' draggable="false" alt="sosnowski"/>
-            </div>
+            <div className="h-grady w-gradx rounded-t-full overflow-hidden flex absolute z-10 mix-blend-multiply " ref={vantaRef}></div>
+            <Image className="rounded-t-full overflow-hidden flex relative" draggable="false" src='/photo.jpg' alt="Picture of the author" width={350} height={520} />
           </div>
         </main>
     </div>
