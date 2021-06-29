@@ -1,39 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from 'next/link';
-import { useEffect, useRef, useState } from "react";
-import FOG from "vanta/dist/vanta.fog.min";
-import * as THREE from "three";
 
 
 export default function Home() {
-  const [vantaEffect, setVantaEffect] = useState(0);
-  const vantaRef = useRef(null);
-  useEffect(() => {
-    if (!vantaEffect) {
-      setVantaEffect(
-        FOG({
-          el: vantaRef.current,
-          THREE,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 520.00,
-          minWidth: 350.00,
-          highlightColor: 0xfab66f,
-          midtoneColor: 0x202dfa,
-          lowlightColor: 0x1f2c78,
-          baseColor: 0xfff7e9,
-          blurFactor: 0.9,
-          speed: 1.60,
-          zoom: 0.90
-        })
-      );
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect]);
   return (
     <div>
         <Head>
@@ -44,7 +14,7 @@ export default function Home() {
           <div className="flex justify-between p-8">
             <ul className="flex space-x-5 font-medium" >
               <a href="https://www.behance.net/ArthurSosnowski">projects</a>   
-              <Link href="/about"><a>about</a></Link>
+              <Link href="/"><a>home</a></Link>
               <a href="https://drive.google.com/file/d/17LAq6Pgof09QMV8Yjhn5s645kBic29KS/view?usp=sharing">resume</a>
             </ul>
             <ul className="flex space-x-5" >
@@ -56,9 +26,15 @@ export default function Home() {
               </a>
             </ul>
           </div>
-          <div className="flex justify-center self-center mt-28">
-            <div className="h-grady w-gradx rounded-t-full overflow-hidden flex absolute z-10 mix-blend-multiply " ref={vantaRef}></div>
+          <div className="flex justify-center self-center mt-28 space-x-8">
             <Image className="rounded-t-full overflow-hidden flex relative" draggable="false" src='/photo.jpg' alt="Picture of the author" width={350} height={520} />
+            <div className="flex flex-col items-start content-end space-y-6">
+              <img className="h-10 mb-4 mt-8" src='/about.svg' draggable="false" alt="about"/>
+              <p className="max-w-prose">Sou um Designer com certificação em UX pela Google e com trabalho premiado pela NASA. O conhecimento me move, amo descobrir coisas novas e ver a infinidade de coisas que nem terei a oportunidade de conhecer, isso me motiva a sempre estar atrás de novas tecnologias e habilidades nas quais eu possa utilizar como apoio ferramental para entender as 
+pessoas de uma forma criativa. </p>
+              <p className="max-w-prose">    Durante o ensino médio tive a oportunidade de participar da equipe de robótica de meu colégio. A partir daí me encantei pelo âmbito criativo na programação e pelo design de produto. No mesmo período aprendi a manipular imagens e vídeos com auxílio de softwares como hobby e isso foi essencial para que conquistasse meu cargo atual.</p>
+              <p className="max-w-prose">    Neste momento estou cursando Engenharia de Software na UTFPR e estudando e praticando cotidianamente UI/UX com projetos pessoais.</p>
+            </div>
           </div>
         </main>
     </div>
